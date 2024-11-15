@@ -394,7 +394,7 @@ func (context connContext) logEvent(entry logEntry) {
 				Source    interface{} `json:"source"`
 				EventType string      `json:"event_type"`
 				Event     logEntry    `json:"event"`
-			}{time.Now().Format(time.RFC3339), source, entry.eventType(), entry}
+			}{time.Now().UTC().Format(time.RFC3339), source, entry.eventType(), entry}
 		} else {
 			jsonEntry = struct {
 				Source    interface{} `json:"source"`

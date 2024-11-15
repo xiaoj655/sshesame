@@ -1,5 +1,5 @@
 server:
-  listen_address: 127.0.0.1:2022
+  listen_address: 0.0.0.0:22
 
   # Host private key files.
   # If unspecified, null or empty, an RSA, ECDSA and Ed25519 key will be generated and stored.
@@ -18,10 +18,10 @@ server:
 logging:
   # The log file to output activity logs to. Debug and error logs are still written to standard error.
   # If unspecified or null, activity logs are written to standard out.
-  file: null
+  file: /root/sshesame.log
 
   # Make activity logs JSON-formatted instead of human readable.
-  json: false
+  json: true
 
   # Include timestamps in the logs.
   timestamps: true
@@ -84,7 +84,7 @@ ssh_proto:
   # Sent to the client after key exchange completed but before authentication.
   # If unspecified or null, a reasonable default is used.
   # If empty, no banner is sent.
-  banner: This is an SSH honeypot. Everything is logged and monitored.
+  banner: ''
 
   # The maximum number of bytes sent or received after which a new key is negotiated. It must be at least 256.
   # If unspecified, null or 0, a size suitable for the chosen cipher is used.
